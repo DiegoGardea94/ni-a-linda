@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para mi niña linda 💖</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 80px;
+      color: #e91e63;
+    }
+    button {
+      margin-top: 30px;
+      font-size: 24px;
+      padding: 10px 30px;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #f50057;
+    }
+    #imagenes {
+      display: none;
+      margin: 40px auto 0;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .poema {
+      margin-top: 50px;
+      font-size: 24px;
+      color: #880e4f;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    .estrofa {
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+    }
+    .corazon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #e91e63;
+      transform: rotate(45deg);
+      animation: flotar 10s infinite;
+    }
+    .corazon::before, .corazon::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #e91e63;
+      border-radius: 50%;
+    }
+    .corazon::before {
+      top: -10px;
+      left: 0;
+    }
+    .corazon::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes flotar {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Te amo</h1>
+
+  <button onclick="mostrarImagen()">para ti, mi niña preciosa (pícale) 💖</button>
+
+  <div>
+    <img id="imagenes" src="imagenes/beso.jpg" alt="para ti, mi niña preciosa">
+  </div>
+
+  <div class="poema">
+    <div class="estrofa">
+      <p>No te quiero sino porque te quiero<br>
+      y de quererte a no quererte llego<br>
+      y de esperarte cuando no te espero<br>
+      pasa mi corazón del frío al fuego.</p>
+    </div>
+
+    <div class="estrofa">
+      <p>Te quiero sólo porque a ti te quiero,<br>
+      te odio sin fin, y odiándote te ruego,<br>
+      y la medida de mi amor viajero<br>
+      es no verte y amarte como un ciego.</p>
+    </div>
+
+    <div class="estrofa">
+      <p>Tal vez consumirá la luz de enero,<br>
+      su rayo cruel, mi corazón entero,<br>
+      robándome la llave del sosiego.</p>
+    </div>
+
+    <div class="estrofa">
+      <p>En esta historia sólo yo me muero<br>
+      y moriré de amor porque te quiero,<br>
+      porque te quiero, amor.</p>
+    </div>
+  </div>
+
+  <!-- Corazones flotando -->
+  <script>
+    function mostrarImagen() {
+      document.getElementById("imagenes").style.display = "block";
+    }
+
+    function crearCorazones() {
+      for (let i = 0; i < 20; i++) {
+        const corazon = document.createElement('div');
+        corazon.classList.add('corazon');
+        corazon.style.left = Math.random() * 100 + 'vw';
+        corazon.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+          corazon.remove();
+        }, 10000);
+      }
+    }
+    setInterval(crearCorazones, 1000);
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
